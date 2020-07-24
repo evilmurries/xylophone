@@ -1,3 +1,7 @@
+This project is from a series of exercise assignments. The original README is below:
+
+
+
 ![App Brewery Banner](Documentation/AppBreweryBanner.png)
 
 # Xylophone
