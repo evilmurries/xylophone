@@ -19,13 +19,18 @@ class ViewController: UIViewController {
 
 
     @IBAction func keyPressed(_ sender: UIButton) {
-        playSound()
+        
+        guard let key = sender.currentTitle else { return }
+        
+        playSound(key)
     }
     
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "C", withExtension: "wav") else { return }
+    func playSound(_ key: String) {
+        
+        guard let url: URL = Bundle.main.url(forResource: key, withExtension: "wav") else { return }
         
         do {
+            
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
